@@ -30,7 +30,7 @@ function Navbar() {
         <div className='navbar-container'>
             <Link to='/' className="navbar-logo"onClick={closeMobileMenu}>
                HeimPage 
-               <i className='fab fa-typo3'></i>
+               <i class="fa-solid fa-fire navbar-icon"></i>
             </Link>
             <div className='menu-icon' onClick={handleClick}>
                 <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
@@ -38,17 +38,17 @@ function Navbar() {
             <ul className={click ? 'nav-menu active' : 'nav-menu'}>
                 <li className='nav-item'>
                     <Link to='/' className='nav-links' onClick={closeMobileMenu}>
-                        Home
+                        Hjem
                     </Link>
                 </li>
                 <li className='nav-item'>
-                    <Link to='/services' className='nav-links' onClick={closeMobileMenu}>
-                        Services
+                    <Link to='/f1' className='nav-links' onClick={closeMobileMenu}>
+                        F1
                     </Link>
                 </li>
                 <li className='nav-item'>
-                    <Link to='/products' className='nav-links' onClick={closeMobileMenu}>
-                        Products
+                    <Link to='/nfl' className='nav-links' onClick={closeMobileMenu}>
+                        NFL
                     </Link>
                 </li>
                 <li className='nav-item'>
