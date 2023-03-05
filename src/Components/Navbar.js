@@ -1,28 +1,12 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.css'
-import { Button } from './Button';
 
 function Navbar() {
     const [click, setClick] = useState(false);
-    const [button, setButton] = useState(true);
 
     const handleClick = () => setClick(!click);
     const closeMobileMenu = () => setClick(false);
-
-    const showButton = () => {
-        if(window.innerWidth <= 960) {
-            setButton(false);
-        } else {
-            setButton(true);
-        }
-    };
-
-    useEffect(() => {
-        showButton();
-    }, []);
-
-    window.addEventListener('resize', showButton);
 
   return (
     <>
@@ -37,27 +21,26 @@ function Navbar() {
             </div>
             <ul className={click ? 'nav-menu active' : 'nav-menu'}>
                 <li className='nav-item'>
-                    <Link to='/' className='nav-links' onClick={closeMobileMenu}>
-                        Hjem
+                    <Link to='https://f1tv.formula1.com/' className='nav-links' onClick={closeMobileMenu}>
+                        F1 TV
                     </Link>
                 </li>
                 <li className='nav-item'>
-                    <Link to='/f1' className='nav-links' onClick={closeMobileMenu}>
-                        F1
+                    <Link to='https://fantasy.formula1.com/en/' className='nav-links' onClick={closeMobileMenu}>
+                        F1 Fantasy
                     </Link>
                 </li>
                 <li className='nav-item'>
-                    <Link to='/nfl' className='nav-links' onClick={closeMobileMenu}>
-                        NFL
+                    <Link to='https://www.nflgamepass.com/en' className='nav-links' onClick={closeMobileMenu}>
+                        NFL Gamepass
                     </Link>
                 </li>
                 <li className='nav-item'>
-                    <Link to='/sign-up' className='nav-links-mobile' onClick={closeMobileMenu}>
-                        Sign Up
+                    <Link to='https://fantasy.nfl.com/' className='nav-links' onClick={closeMobileMenu}>
+                        NFL Fantasy
                     </Link>
                 </li>
             </ul>
-            {button && <Button buttonStyle='btn--outline'> SIGN UP</Button>}
         </div>
      </nav>
     </>
